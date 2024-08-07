@@ -18,18 +18,19 @@ class Pagina3 extends StatelessWidget {
             child: Text(info),
           ),
 Padding(padding: EdgeInsets.all(8.0),),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.pop(context,txt2.text);
-              },
-              child: const Text('Volver')),
+          
               TextField(
                 controller: txt2,
                 decoration: const InputDecoration(
                   border: OutlineInputBorder(),
                   labelText: 'Texto de vuelta',
                 ),
-              )
+              ),
+              ElevatedButton(
+              onPressed: () {
+                Navigator.pop(context,txt2.text);
+              },
+              child: const Text('Devolver'),),
         ],
       ),
     );

@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-
 
 import 'pagina_testerdrawer.dart';
 
@@ -25,11 +23,11 @@ class Pagina1 extends StatelessWidget {
         ),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.amber,
+        backgroundColor: Colors.teal.shade500,
         title: const Text('Pagina test drawer'),
       ),
       body: const Center(
-        child: Text('Pagina 1'),
+        child: Text('Aqui se pondra a prueba el drawer'),
       ),
     );
   }
