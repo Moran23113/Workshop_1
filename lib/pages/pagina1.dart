@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'package:go_router/go_router.dart';
 import 'pagina_testerdrawer.dart';
 
 class Pagina1 extends StatelessWidget {
@@ -8,27 +8,19 @@ class Pagina1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-        child: Column(
+        appBar: AppBar(
+          title: const Text('Pagina 1'),
+        ),
+        drawer: Drawer(
+            child: Column(
           children: [
             ElevatedButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const PaginaTesterdrawer()));
-                },
-                child: const Text('Pagina drawer test')),
+              onPressed: () {
+                context.push('/pagina_testerdrawer');
+              },
+              child: const Text('Ir a drawer'),
+            ),
           ],
-        ),
-      ),
-      appBar: AppBar(
-        backgroundColor: Colors.teal.shade500,
-        title: const Text('Pagina test drawer'),
-      ),
-      body: const Center(
-        child: Text('Aqui se pondra a prueba el drawer'),
-      ),
-    );
+        )));
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class PaginaTesterdrawer extends StatelessWidget {
   const PaginaTesterdrawer({super.key});
@@ -12,7 +13,7 @@ children: [
         children: [
           const Center(),
           ElevatedButton(onPressed: (){
-            Navigator.pop(context);
+            context.pop();
 
 
           }, child: const Text('Atras')),

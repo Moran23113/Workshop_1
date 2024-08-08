@@ -1,38 +1,64 @@
 import 'package:flutter/material.dart';
+import 'package:workshop_1/pages/PAGINA_PRINCIPAL.dart';
+import 'package:workshop_1/pages/pagina3.dart';
 import 'pages/pagina1.dart';
 import 'pages/pagina2.dart';
+import 'package:go_router/go_router.dart';
+import 'pages/pagina_testerdrawer.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MainApp());
 }
 
 class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+  MainApp({super.key});
+  final GoRouter _router = GoRouter(
+    routes: <RouteBase>[
+      GoRoute(
+
+        path: '/',
+        builder: (BuildContext context, GoRouterState state) {
+          return const PaginaPrincipal();
+        },
+      ),
+      GoRoute(
+        path: '/pagina2',
+        builder: (BuildContext context, GoRouterState state) {
+          return const Pagina2();
+        },
+      ),
+      GoRoute(
+        path: '/pagina3',
+        builder: (BuildContext context, GoRouterState state) {
+          var txt2 = state.extra as String;
+          return  Pagina3(txt2);
+
+        },
+      ),
+      GoRoute(path: 
+        '/pagina_testerdrawer',
+        builder: (BuildContext context, GoRouterState state) {
+          return  PaginaTesterdrawer();
+        },),
+        GoRoute(path: 
+        '/pagina1',
+        builder: (BuildContext context, GoRouterState state) {
+          return  Pagina1();
+        },)
+    ],
+  );
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
-      home: DefaultTabController(
-        length: 2, 
-      child: Scaffold(
-        appBar: AppBar(
-          backgroundColor: Colors.blueAccent,
-          bottom: const TabBar(
-            tabs: [
-              Tab(icon: Icon(Icons.looks_one_sharp)),
-              Tab(icon: Icon(Icons.looks_two_sharp)),
-            ],
-          ),
-          title: const Text('Probando Tabs'),
-        ),
-        body: const TabBarView(
-          children: [
-            Pagina1(),
-            Pagina2(),
-          ],
-        ),
+    return MaterialApp.router(
+      
+      routerConfig: _router,
+      debugShowCheckedModeBanner: false,
+      title: 'Probando Tabs',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
-    ),
+      
     );
   }
 }

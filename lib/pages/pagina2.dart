@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workshop_1/pages/pagina3.dart';
+import 'package:go_router/go_router.dart';
 
 class Pagina2 extends StatefulWidget {
   const Pagina2({super.key});
@@ -42,15 +43,17 @@ class _Pagina2State extends State<Pagina2> {
           ),
           ElevatedButton(
               onPressed: () async {
-                var result = await Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => Pagina3(txt.text)));
-
+                var result = await context.push('/pagina3', extra: txt.text);
                 setState(() {
-                  resultado = result;
+                  if (result != null && result is String) {
+                    resultado = result;
+                  }
                 });
               },
               child: Text('enviar')),
-              Padding(padding: EdgeInsets.all(8.0),),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+          ),
           Text(resultado),
         ],
       ),

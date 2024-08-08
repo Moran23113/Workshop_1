@@ -1,9 +1,14 @@
-import 'package:flutter/material.dart';
 
+import 'package:flutter/material.dart';
+// ignore: unused_import
+import 'package:go_router/go_router.dart';
+
+// ignore: must_be_immutable
 class Pagina3 extends StatelessWidget {
-  final String info;
-  final txt2 = TextEditingController();
-   Pagina3(this.info, {super.key});
+   Pagina3(this.info,{super.key});
+   final txt2 = TextEditingController();
+   var info="";
+
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +20,7 @@ class Pagina3 extends StatelessWidget {
         children: [
 
           Center(
-            child: Text(info),
+            child: Text(this.info),
           ),
 Padding(padding: EdgeInsets.all(8.0),),
           
