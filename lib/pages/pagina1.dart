@@ -18,7 +18,7 @@ class Pagina1 extends StatelessWidget {
               onPressed: () {
                 context.push('/pagina_testerdrawer');
               },
-              child: const Text('Ir a drawer'),
+              child: const Text('Calculadora'),
             ),
           ],
         )));

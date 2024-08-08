@@ -16,8 +16,8 @@ class PaginaPrincipal extends StatelessWidget {
           appBar: AppBar(
             bottom: const TabBar(
               tabs: [
-                Tab(icon: Icon(Icons.directions_car)),
-                Tab(icon: Icon(Icons.directions_transit)),
+                Tab(icon: Icon(Icons.looks_one_outlined)),
+                Tab(icon: Icon(Icons.looks_two_outlined)),
               ],
             ),
             title: const Text('Navegar'),
