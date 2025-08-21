@@ -1,0 +1,77 @@
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Estilos globales para la aplicación */
+.page-header {
+  background: var(--surface-color);
+  padding: 16px 24px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.page-header h2 {
+  margin: 0;
+  color: var(--text-primary);
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--primary-color);
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.back-button:hover {
+  background-color: rgba(33, 150, 243, 0.1);
+}
+
+.page-content {
+  padding: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.info-card {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  border-radius: var(--border-radius);
+  margin-top: 24px;
+}
+
+.info-card h4 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.info-card p {
+  margin: 0;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .page-content {
+    padding: 16px;
+  }
+  
+  .page-header {
+    padding: 12px 16px;
+  }
+  
+  .page-header h2 {
+    font-size: 20px;
+  }
+}

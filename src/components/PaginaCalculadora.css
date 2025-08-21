@@ -1,0 +1,231 @@
+.calculadora {
+  min-height: 100vh;
+  background: var(--background-color);
+}
+
+.calculator-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.calculator-card {
+  background: var(--surface-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.input-section {
+  display: grid;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.number-input {
+  width: 100%;
+  padding: 16px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.number-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.operation-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.operation-selector label {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.operation-select {
+  padding: 16px;
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  background: var(--surface-color);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.operation-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.result-section {
+  margin-bottom: 32px;
+}
+
+.result-section label {
+  display: block;
+  margin-bottom: 12px;
+  font-weight: 600;
+  color: var(--text-primary);
+  font-size: 18px;
+}
+
+.result-display {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 24px;
+  border-radius: var(--border-radius);
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: var(--shadow);
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.calculate-button {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: var(--shadow);
+}
+
+.calculate-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.clear-button {
+  background: linear-gradient(135deg, var(--error-color) 0%, #d32f2f 100%);
+  color: white;
+  border: none;
+  padding: 16px 24px;
+  border-radius: var(--border-radius);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: var(--shadow);
+}
+
+.clear-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.calculator-info {
+  background: var(--surface-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  padding: 32px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+.calculator-info h3 {
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.operations-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.operation-item {
+  background: rgba(33, 150, 243, 0.05);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.operation-item:hover {
+  background: rgba(33, 150, 243, 0.1);
+  transform: translateY(-2px);
+}
+
+.operation-symbol {
+  display: block;
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 8px;
+}
+
+.operation-name {
+  font-size: 14px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .calculator-container {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 0 16px;
+  }
+  
+  .calculator-card,
+  .calculator-info {
+    padding: 24px;
+  }
+  
+  .button-section {
+    grid-template-columns: 1fr;
+  }
+  
+  .operations-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .operation-item {
+    padding: 16px;
+  }
+  
+  .operation-symbol {
+    font-size: 24px;
+  }
+  
+  .result-display {
+    font-size: 24px;
+    padding: 20px;
+  }
+}
